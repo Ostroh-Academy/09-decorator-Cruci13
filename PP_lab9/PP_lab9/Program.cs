@@ -1,70 +1,75 @@
 ﻿using System;
 
 
-abstract class Component
+abstract class ChristmasTree
 {
-    public abstract void Operation();
+    public abstract void Decorate();
 }
 
 
-class ConcreteComponent : Component
+class SimpleChristmasTree : ChristmasTree
 {
-    public override void Operation()
+    public override void Decorate()
     {
-        Console.WriteLine("ConcreteComponent.Operation()");
-    }
-}
-
-
-abstract class Decorator : Component
-{
-    protected Component component;
-
-    public Decorator(Component component)
-    {
-        this.component = component;
-    }
-
-    public override void Operation()
-    {
-        if (component != null)
-        {
-            component.Operation();
-        }
+        Console.WriteLine("Simple Christmas Tree");
     }
 }
 
 
-class ConcreteDecoratorA : Decorator
+abstract class Decorator : ChristmasTree
 {
-    public ConcreteDecoratorA(Component component) : base(component)
+    protected ChristmasTree christmasTree;
+
+    public Decorator(ChristmasTree christmasTree)
     {
+        this.christmasTree = christmasTree;
     }
 
-    public override void Operation()
+    public override void Decorate()
     {
-        base.Operation();
-        Console.WriteLine("ConcreteDecoratorA.Operation()");
+        christmasTree.Decorate();
     }
 }
 
 
-class ConcreteDecoratorB : Decorator
+class BallsDecorator : Decorator
 {
-    public ConcreteDecoratorB(Component component) : base(component)
+    public BallsDecorator(ChristmasTree christmasTree) : base(christmasTree)
     {
     }
 
-    public override void Operation()
+    public override void Decorate()
     {
-        base.Operation();
-        AddedBehavior();
-        Console.WriteLine("ConcreteDecoratorB.Operation()");
+        base.Decorate();
+        Console.WriteLine("Add Balls");
+    }
+}
+
+
+class GarlandDecorator : Decorator
+{
+    public GarlandDecorator(ChristmasTree christmasTree) : base(christmasTree)
+    {
     }
 
-    void AddedBehavior()
+    public override void Decorate()
     {
-        Console.WriteLine("ConcreteDecoratorB.AddedBehavior()");
+        base.Decorate();
+        Console.WriteLine("Add Garland");
+    }
+}
+
+
+class LEDLightsDecorator : Decorator
+{
+    public LEDLightsDecorator(ChristmasTree christmasTree) : base(christmasTree)
+    {
+    }
+
+    public override void Decorate()
+    {
+        base.Decorate();
+        Console.WriteLine("Add LED Lights");
     }
 }
 
@@ -73,13 +78,14 @@ class Program
     static void Main(string[] args)
     {
         
-        Component component = new ConcreteComponent();
+        ChristmasTree tree = new SimpleChristmasTree();
 
         
-        Decorator decoratorA = new ConcreteDecoratorA(component);
-        Decorator decoratorB = new ConcreteDecoratorB(decoratorA);
+        tree = new BallsDecorator(tree);
+        tree = new GarlandDecorator(tree);
+        tree = new LEDLightsDecorator(tree);
 
         
-        decoratorB.Operation();
+        tree.Decorate();
     }
 }

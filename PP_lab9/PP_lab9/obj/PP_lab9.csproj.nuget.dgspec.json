@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\3course\\OOP\\PP_lab9\\PP_lab9\\PP_lab9.csproj": {}
+    "D:\\code\\3course\\PP\\PP_lab9\\PP_lab9\\PP_lab9.csproj": {}
   },
   "projects": {
-    "D:\\code\\3course\\OOP\\PP_lab9\\PP_lab9\\PP_lab9.csproj": {
+    "D:\\code\\3course\\PP\\PP_lab9\\PP_lab9\\PP_lab9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\3course\\OOP\\PP_lab9\\PP_lab9\\PP_lab9.csproj",
+        "projectUniqueName": "D:\\code\\3course\\PP\\PP_lab9\\PP_lab9\\PP_lab9.csproj",
         "projectName": "PP_lab9",
-        "projectPath": "D:\\code\\3course\\OOP\\PP_lab9\\PP_lab9\\PP_lab9.csproj",
+        "projectPath": "D:\\code\\3course\\PP\\PP_lab9\\PP_lab9\\PP_lab9.csproj",
         "packagesPath": "C:\\Users\\uzer\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\3course\\OOP\\PP_lab9\\PP_lab9\\obj\\",
+        "outputPath": "D:\\code\\3course\\PP\\PP_lab9\\PP_lab9\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\uzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
